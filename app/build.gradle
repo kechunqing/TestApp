@@ -9,11 +9,15 @@ android {
     buildToolsVersion "30.0.1"
     defaultConfig {
         applicationId "com.example.testapp"
-        minSdkVersion 15
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk{
+            abiFilters "armeabi-v7a"
+        }
     }
     buildTypes {
         release {
@@ -21,6 +25,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
 }
 
 dependencies {
@@ -32,4 +41,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.android:flexbox:1.0.0'
+
+    /**sdk需要的第三方库，打包aar方式不会添加其中远程依赖库，解决方法有如下几种，目前暂用第一种
+     * 1 在主项目中导入对应的库
+     * 2 library使用jar包方式
+     * 3 上传maven库方式
+     */
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.alibaba:fastjson:1.2.44'
+    implementation files("../lib/seeulinkSDK.aar")
 }
