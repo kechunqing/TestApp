@@ -17,9 +17,6 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alibaba.fastjson.JSON;
-
-import com.example.testapp.R;
 import com.konka.media.PCMRecorder;
 import com.konka.sdk.SeeulinkSDK;
 import com.konka.sdk.bean.AgentUser;
