@@ -51,5 +51,4 @@ dependencies {
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.alibaba:fastjson:1.2.44'
-    implementation files("../lib/seeulinkSDK.aar")
 }
